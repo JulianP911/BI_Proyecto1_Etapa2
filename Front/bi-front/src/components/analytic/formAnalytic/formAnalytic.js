@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import {Form, Button} from 'react-bootstrap';
+import axios from 'axios';
 
 // Funcion NavbarMarvel
 function FormAnalytic () {
@@ -22,37 +23,28 @@ function FormAnalytic () {
     }
 
     async function prediccionElegibilidad(datos) {
+        var url = "https://proyecto1-etapa2-bi.herokuapp.com/"
         if(datos.model === "1") {
-            let json = JSON.stringify({ "texts": [{"processed_study": datos.study, "processed_condition": datos.condition}]});
-            return fetch("https://proyecto1-etapa2-bi.herokuapp.com/decisionTree", {
-                method: "POST",
-                headers: {
-                    "Content-type": "application/json"
-                },
-                body: json,
-            }).then((data) => data.json());
+            url += "decisionTree"
         } else if(datos.model === "2") {
-            return fetch("https://proyecto1-etapa2-bi.herokuapp.com/randomForest", {
-                method: "POST",
-                mode: "cors",
-                headers: {
-                    'Access-Control-Allow-Origin': '*',
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({ study: datos.study, condition: datos.condition}),
-            }).then((data) => data.json());
+            url += "randomForest";
         } else {
-            return fetch("https://proyecto1-etapa2-bi.herokuapp.com/logisticRegression", {
-                method: "POST",
-                mode: "cors",
-                headers: {
-                    'Access-Control-Allow-Origin': '*',
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({ study: datos.study, condition: datos.condition}),
-            }).then((data) => data.json());
+            url += "logisticRegression";
         }
-      } 
+        const headers = {
+            'Access-Control-Allow-Origin': '*',
+            'Content-Type': 'application/json',
+        }
+        const info = JSON.stringify({ "texts": [{"processed_study": datos.study, "processed_condition": datos.condition}]});
+        axios
+            .post(url, info, {headers} )
+            .then((resp)=> {
+                console.log(resp);
+            })
+            .catch((err)=> {
+                console.log(err);
+            }) 
+    }
 
     return (
         <Form onSubmit={enviarDatos}>
