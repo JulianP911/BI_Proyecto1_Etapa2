@@ -24,7 +24,7 @@ function FormAnalytic () {
     async function prediccionElegibilidad(datos) {
         if(datos.model === "1") {
             let json = JSON.stringify({ "texts": [{"processed_study": datos.study, "processed_condition": datos.condition}]});
-            return fetch("http://127.0.0.1:8000/decisionTree", {
+            return fetch("https://proyecto1-etapa2-bi.herokuapp.com/decisionTree", {
                 method: "POST",
                 headers: {
                     "Content-type": "application/json"
