@@ -23,12 +23,13 @@ function FormAnalytic () {
 
     async function prediccionElegibilidad(datos) {
         if(datos.model === "1") {
-            return fetch("https://proyecto1-etapa2-bi.herokuapp.com/decisionTree", {
+            let json = JSON.stringify({ "texts": [{"processed_study": datos.study, "processed_condition": datos.condition}]});
+            return fetch("http://127.0.0.1:8000/decisionTree", {
                 method: "POST",
                 headers: {
-                    "Content-Type": "application/json",
+                    "Content-type": "application/json"
                 },
-                body: JSON.stringify({ "texts": [{"processed_study": datos.study, "processed_condition": datos.condition}]}),
+                body: json,
             }).then((data) => data.json());
         } else if(datos.model === "2") {
             return fetch("https://proyecto1-etapa2-bi.herokuapp.com/randomForest", {

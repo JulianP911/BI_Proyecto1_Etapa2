@@ -12,9 +12,20 @@ from sklearn.metrics import r2_score, mean_squared_error
 from joblib import load
 from fastapi.encoders import jsonable_encoder
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
 # Creación de la instancia de FastAPI
 app = FastAPI()
+
+origins = ["http://localhost:3000"]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Endpoint inicial de la API
 @app.get("/")
@@ -24,6 +35,7 @@ def read_root():
 # Endpoint 1: Realizar predicciones con el modelo ML (Decission tree)
 @app.post("/decisionTree")
 def make_predictions_decission_tree(data: DataModelList):
+   print(data)
    df = convert_json_to_dataframe(data)
    df.columns = DataModel.columns()
    model = load("./models/Model_DecisionTree.joblib")
