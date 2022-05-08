@@ -10,7 +10,7 @@ function FormAnalytic () {
         condition: '',
         model: '',
     })
-    const [resultado, setResultado] = useState("")
+    const [resultado, setResultado] = useState("-")
 
     const handleInputChange = (event) => {
         setDatos({
@@ -29,7 +29,9 @@ function FormAnalytic () {
         if(datos.model === "1") {
             url += "decisionTree"
         } else if(datos.model === "2") {
+            console.log(datos)
             url += "randomForest";
+            console.log(url)
         } else {
             url += "logisticRegression";
         }
@@ -41,8 +43,9 @@ function FormAnalytic () {
         axios
             .post(url, info, {headers} )
             .then((resp)=> {
-               console.log(resp.data.Predict_DT[1])
-               setResultado(resp.data.Predict_DT[1])
+               console.log(resp)
+               console.log(resp.data.Predict[1])
+               setResultado(resp.data.Predict[1])
             })
             .catch((err)=> {
                 console.log(err);
