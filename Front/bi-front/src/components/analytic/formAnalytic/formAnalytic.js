@@ -3,7 +3,7 @@ import {Form, Button} from 'react-bootstrap';
 import axios from 'axios';
 import ResultAnalytic from "../resultAnalytic/resultAnalytic";
 
-// Funcion NavbarMarvel
+// Funcion FormAnalytic
 function FormAnalytic () {
     const [datos, setDatos] = useState({
         study: '',
@@ -11,19 +11,18 @@ function FormAnalytic () {
         model: '',
     })
     const [resultado, setResultado] = useState("-")
-
+    // Funciones para el manejo de los datos del formulario
     const handleInputChange = (event) => {
         setDatos({
             ...datos,
             [event.target.id] : event.target.value,
         })
     }
-
     const enviarDatos = (event) => {
         event.preventDefault();
         prediccionElegibilidad(datos);
     }
-
+    // Funcion encargada para hacer las predicciones de elegibilidad de un paciente
     async function prediccionElegibilidad(datos) {
         var url = "https://proyecto1-etapa2-bi.herokuapp.com/"
         if(datos.model === "1") {
@@ -51,7 +50,6 @@ function FormAnalytic () {
                 console.log(err);
             }) 
     }
-
     return (
         <div className="row">
             <div className="col-7 border">
@@ -83,5 +81,5 @@ function FormAnalytic () {
     )
 }
 
-// Exportar funcion NavbarMarvel para ser visible en otros archivos
+// Exportar funcion FormAnalytic para ser visible en otros archivos
 export default FormAnalytic;

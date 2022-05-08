@@ -1,6 +1,6 @@
 import React from "react";
 
-// Funcion NavbarMarvel
+// Funcion NavbarAnalytic
 function NavbarAnalytic () {
     return (
         <header className="p-3 mb-3 border-bottom bg-dark">
@@ -31,5 +31,5 @@ function NavbarAnalytic () {
     )
 }
 
-// Exportar funcion NavbarMarvel para ser visible en otros archivos
+// Exportar funcion NavbarAnalytic para ser visible en otros archivos
 export default NavbarAnalytic;

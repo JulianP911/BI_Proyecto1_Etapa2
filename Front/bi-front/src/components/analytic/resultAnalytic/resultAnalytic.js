@@ -2,7 +2,6 @@ import React from "react";
 
 // Funcion ResultAnalytic
 function ResultAnalytic (props) {
-    
     return (
         <div>
             {props.resultadoElegibilidad === "0" ? 

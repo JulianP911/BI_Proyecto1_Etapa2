@@ -1,6 +1,6 @@
 import React from "react";
 
-// Funcion NavbarMarvel
+// Funcion FooterAnalytic
 function FooterAnalytic () {
     return (
         <div className="container">
