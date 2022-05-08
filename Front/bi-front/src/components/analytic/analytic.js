@@ -8,13 +8,8 @@ function Analtytic () {
         <div>
             <NavbarAnalytic />
             <div className="container">
-                <div className="row">
-                    <div className="col-7 border">
-                        <FormAnalytic />
-                    </div>
-                    <div className="col-5">
-                        
-                    </div>
+                <div>
+                    <FormAnalytic />
                 </div>
             </div>
         </div>

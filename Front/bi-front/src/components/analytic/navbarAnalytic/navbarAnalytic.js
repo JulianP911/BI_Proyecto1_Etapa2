@@ -3,14 +3,37 @@ import React from "react";
 // Funcion NavbarMarvel
 function NavbarAnalytic () {
     return (
-        <nav className="navbar navbar-light" style={{background: "#9CD7FD"}}>
-            <div className="container-fluid">
-                <a className="navbar-brand" style={{color: "#014B7B"}} href=".">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAACoklEQVR4nO2bvW4UMRDHf0GnK9JGoUKip6ZAKEDLQcVLpEqJeAAK8sHDhAZegDsFXiPZROFegUhHsbM6tPF+eM7e8W38l0YreT3jmf+tZ2zf7g7D4wXwQa6PpW0JXADnwG8DnwbBc+AXsOqQC+k7GkyAz8AdZYC3wBnwFngmMgO+An+kz53oTAz8DYqnwJx1UCfAbkv/XeCUNVlzsWGCqThzQ/dj2yVXwJua/fdAIfdmtXuvpX3Tca8pSZ9qCDgJ4MAK+AbsOez/H+Cl4/6e6Ibw4VhDwLUov/TUeyV6f4EjYKehXxcBiO6R2FqJbR8csH4SvFE554sfovexo9+MkoRLyoTYhk9i87vCH20casVb0XM99lrss64gvhicAPWAkey26j1SGHxHe4aOjaZxC8rKEnygOvqWp4OAvlSJtUtcyTT4FOgyeNbTWY2cRvA3uMEJ5bJ2SbjAl5TEti2NkyHACip/NUlwVAhBwIJy05JCW1D0faRc/Sza8hTQIMSBw4L7DFu1BUWuAg8BmQBrB6wRk4CmXaPrDDBJbJoE23aNTUdgmyC5vYBWf0EzcZW4VoCjqQJ9yY0OX0ab5nyTfuicYD4FXMH/dPSbO/qFyAnmBGgHCrWyHE0OGBSpEtBVCYKdA6RKQNeUSLIKuJKg65dy/bqjSIIzykB8y2Cf/wZj+BvdYHCHYoyXag4YDDEJKOTqmhJXtb591v9bVwUOuR8o0nZYa/OdEklWAWvkHKBBJsDaAWvEIMA3o2sk6SowRILMVcCBXAU0yARYO2CNTIC1A9bIBFg7YA3NKzIF8IQ01wKu7bcavmd/1tJ0thj8THDbkFeCbcgEtNy7kWvI9/6HRvWRleqjqWPsE1so+aIhYCokVJ/PbaMUErzqw8mMh4B/xOKoq4ShERwAAAAASUVORK5CYII=" alt="Logo App" width="35" height="35" className="d-inline-block align-text-top"/>
-                <span className="mt-5">Salva a Tu Paciente</span>
+        <header class="p-3 mb-3 border-bottom bg-dark">
+            <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+                <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"></svg>
                 </a>
+
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="." class="nav-link px-2 link-light">Home</a></li>
+                <li><a href="." class="nav-link px-2 link-light">Inventory</a></li>
+                <li><a href="." class="nav-link px-2 link-light">Customers</a></li>
+                <li><a href="." class="nav-link px-2 link-light">Products</a></li>
+                </ul>
+
+            
+
+                <div class="dropdown text-end">
+                <a href="." class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle"/>
+                </a>
+                <ul class="dropdown-menu text-small link-light" aria-labelledby="dropdownUser1">
+                    <li><a class="dropdown-item" href=".">New project...</a></li>
+                    <li><a class="dropdown-item" href=".">Settings</a></li>
+                    <li><a class="dropdown-item" href=".">Profile</a></li>
+                    <li><hr class="dropdown-divider"/></li>
+                    <li><a class="dropdown-item" href=".">Sign out</a></li>
+                </ul>
+                </div>
             </div>
-        </nav>
+            </div>
+        </header>
     )
 }
 

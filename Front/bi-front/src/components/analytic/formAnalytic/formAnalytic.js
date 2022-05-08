@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import {Form, Button} from 'react-bootstrap';
 import axios from 'axios';
+import ResultAnalytic from "../resultAnalytic/resultAnalytic";
 
 // Funcion NavbarMarvel
 function FormAnalytic () {
@@ -9,6 +10,7 @@ function FormAnalytic () {
         condition: '',
         model: '',
     })
+    const [resultado, setResultado] = useState("")
 
     const handleInputChange = (event) => {
         setDatos({
@@ -19,7 +21,7 @@ function FormAnalytic () {
 
     const enviarDatos = (event) => {
         event.preventDefault();
-        console.log(prediccionElegibilidad(datos));
+        prediccionElegibilidad(datos);
     }
 
     async function prediccionElegibilidad(datos) {
@@ -39,7 +41,8 @@ function FormAnalytic () {
         axios
             .post(url, info, {headers} )
             .then((resp)=> {
-                console.log(resp);
+               console.log(resp.data.Predict_DT[1])
+               setResultado(resp.data.Predict_DT[1])
             })
             .catch((err)=> {
                 console.log(err);
@@ -47,26 +50,33 @@ function FormAnalytic () {
     }
 
     return (
-        <Form onSubmit={enviarDatos}>
-            <Form.Group className="mb-3">
-                <Form.Label><b>Study</b></Form.Label>
-                <Form.Control type="text" placeholder="Enter text of the study" id="study" onChange={handleInputChange}/>
-            </Form.Group>
-            <Form.Group className="mb-3">
-                <Form.Label><b>Condition</b></Form.Label>
-                <Form.Control type="text" placeholder="Enter text of the condition" id="condition" onChange={handleInputChange}/>
-            </Form.Group>
-            <Form.Label><b>Predictive model</b></Form.Label>
-            <Form.Select aria-label="Default select example" id="model" onChange={handleInputChange}>
-                <option>Select the prediction model</option>
-                <option value="1">Decision Tree</option>
-                <option value="2">Random Forest</option>
-                <option value="3">Logistic Regression</option>
-            </Form.Select>
-            <Button variant="primary" type="submit">
-                Submit
-            </Button>
-        </Form>
+        <div className="row">
+            <div className="col-7 border">
+                <Form onSubmit={enviarDatos}>
+                    <Form.Group className="mt-3">
+                        <Form.Label><b>Study</b></Form.Label>
+                        <Form.Control type="text" placeholder="Enter text of the study" id="study" onChange={handleInputChange}/>
+                    </Form.Group>
+                    <Form.Group className="mb-3">
+                        <Form.Label><b>Condition</b></Form.Label>
+                        <Form.Control type="text" placeholder="Enter text of the condition" id="condition" onChange={handleInputChange}/>
+                    </Form.Group>
+                    <Form.Label><b>Predictive model</b></Form.Label>
+                    <Form.Select aria-label="Default select example" id="model" onChange={handleInputChange}>
+                        <option>Select the prediction model</option>
+                        <option value="1">Decision Tree</option>
+                        <option value="2">Random Forest</option>
+                        <option value="3">Logistic Regression</option>
+                    </Form.Select>
+                    <Button className="bg-dark mt-3 mb-3" variant="primary" type="submit">
+                        Submit
+                    </Button>
+                </Form>
+            </div>
+            <div className="col-5 border">
+                <ResultAnalytic resultadoElegibilidad={resultado}/>
+            </div>  
+        </div> 
     )
 }
 
