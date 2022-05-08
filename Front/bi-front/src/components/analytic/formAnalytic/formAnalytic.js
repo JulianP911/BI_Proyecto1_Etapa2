@@ -73,7 +73,7 @@ function FormAnalytic () {
                     </Button>
                 </Form>
             </div>
-            <div className="col-5 border">
+            <div className="col-5 border d-flex align-items-center justify-content-center">
                 <ResultAnalytic resultadoElegibilidad={resultado}/>
             </div>  
         </div> 
