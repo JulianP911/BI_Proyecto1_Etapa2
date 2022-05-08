@@ -17,8 +17,10 @@ from fastapi.middleware.cors import CORSMiddleware
 # Creación de la instancia de FastAPI
 app = FastAPI()
 
-origins = ["http://localhost:3000"]
+# Arreglo de las urls que pueden acceder al backend
+origins = ["http://localhost:3000", "https://proyecto1-etapa2-bi-front.herokuapp.com"]
 
+# Manejo de las cors para habilitar los endpoints
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
@@ -42,7 +44,7 @@ def make_predictions_decission_tree(data: DataModelList):
    result = model.predict(df)
    lists = result.tolist()
    json_predict = json.dumps(lists)
-   return {"Predict_DT": json_predict}
+   return {"Predict": json_predict}
 
 # Endpoint 2: Realizar predicciones con el modelo ML (Random forest)
 @app.post("/randomForest")
@@ -53,7 +55,7 @@ def make_predictions_random_forest(data: DataModelList):
    result = model.predict(df)
    lists = result.tolist()
    json_predict = json.dumps(lists)
-   return {"Predict_RF": json_predict}
+   return {"Predict": json_predict}
 
 # Endpoint 3: Realizar predicciones con el modelo ML (Logistic regression)
 @app.post("/logisticRegression")
@@ -64,7 +66,7 @@ def make_predictions_logistic_regresion(data: DataModelList):
    result = model.predict(df)
    lists = result.tolist()
    json_predict = json.dumps(lists)
-   return {"Predict_RF": json_predict}
+   return {"Predict": json_predict}
 
 
 # Función: Está se encarga de convertir los datos recibidos a través del JSON en un dataframe para que puedan ser usados en el modelo ML
