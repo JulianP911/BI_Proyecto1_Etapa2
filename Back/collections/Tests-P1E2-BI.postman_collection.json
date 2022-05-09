@@ -1,0 +1,96 @@
+{
+	"info": {
+		"_postman_id": "c80a29e5-e22b-4976-8332-f9c529352055",
+		"name": "Tests-P1E2-BI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Test 1: Decision Tree - Success",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"texts\": [\n    {\n      \"processed_study\": \"study interventions are Stem cell transplantation\",\n      \"processed_condition\": \"hodgkin lymphoma diagnosis and history of congenital hematologic immunologic or metabolic disorder which in the estimation of the pi poses prohibitive risk to the recipient\"\n    },\n    {\n      \"processed_study\": \"study interventions are Saracatinib\",\n      \"processed_condition\": \"recurrent verrucous carcinoma of the larynx diagnosis and patients must agree to use adequate birth control for the duration of study participation and for at least eight weeks after discontinuation of study drug\"\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://proyecto1-etapa2-bi.herokuapp.com/decisionTree",
+					"protocol": "https",
+					"host": [
+						"proyecto1-etapa2-bi",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"decisionTree"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test 1: Random Forest - Success",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"texts\": [\n    {\n      \"processed_study\": \"study interventions are Stem cell transplantation\",\n      \"processed_condition\": \"hodgkin lymphoma diagnosis and history of congenital hematologic immunologic or metabolic disorder which in the estimation of the pi poses prohibitive risk to the recipient\"\n    },\n    {\n      \"processed_study\": \"study interventions are Saracatinib\",\n      \"processed_condition\": \"recurrent verrucous carcinoma of the larynx diagnosis and patients must agree to use adequate birth control for the duration of study participation and for at least eight weeks after discontinuation of study drug\"\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://proyecto1-etapa2-bi.herokuapp.com/randomForest",
+					"protocol": "https",
+					"host": [
+						"proyecto1-etapa2-bi",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"randomForest"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test 1: Logistic Regressión - Success",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"texts\": [\n    {\n      \"processed_study\": \"study interventions are Stem cell transplantation\",\n      \"processed_condition\": \"hodgkin lymphoma diagnosis and history of congenital hematologic immunologic or metabolic disorder which in the estimation of the pi poses prohibitive risk to the recipient\"\n    },\n    {\n      \"processed_study\": \"study interventions are Saracatinib\",\n      \"processed_condition\": \"recurrent verrucous carcinoma of the larynx diagnosis and patients must agree to use adequate birth control for the duration of study participation and for at least eight weeks after discontinuation of study drug\"\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://proyecto1-etapa2-bi.herokuapp.com/logisticRegression",
+					"protocol": "https",
+					"host": [
+						"proyecto1-etapa2-bi",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"logisticRegression"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
