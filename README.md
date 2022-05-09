@@ -22,7 +22,7 @@
   <li>Clonar el proyecto en un carpeta de preferencia.</li>
   <li>Abrir Visual Studio Code en la carpeta donde quede almacenado el proyecto (carpeta Back).</li>
   <li>Abrir la terminal en la dirección de proyecto back e ingresar el comando <code>$ pip install -r requirements.txt
-</code> para instalar las dependencias necesarias para la ejecución respectiva del proyecto.</li>
+</code> para instalar las dependencias necesarias para la ejecución respectiva del proyecto back.</li>
   </ol>
   
 <strong>Despliegue del proyecto:</strong>
@@ -112,3 +112,29 @@
     "Predict": "[1, 0]"
 }
 ```
+
+<h3>Frontend</h3>
+
+<strong>Instrucciones de instalación:</strong>
+<ol>
+  <li>Clonar el proyecto en un carpeta de preferencia.</li>
+  <li>Abrir Visual Studio Code en la carpeta donde quede almacenado el proyecto (carpeta Front > bi-front).</li>
+  <li>Abrir la terminal en la dirección de proyecto bi-front e ingresar el comando <code>npm i</code> para instalar las dependencias necesarias para la ejecución respectiva del proyecto front.</li>
+</ol>
+
+<strong>Despliegue del proyecto:</strong>
+  <ul>
+    <li>
+      Deslpliegue local:
+      <ol>
+        <li>Abrir la terminal en la dirección del proyecto bi-front e ingresar el comando <code>npm start</code> para correr el servidor de forma local.</li>
+      </ol>
+    </li>
+    <li>
+      Despliegue remoto:
+      <ol>
+        <li>Abrir el navegador de preferencia y ingresar a la url <code>"https://proyecto1-etapa2-bi-front.herokuapp.com/"</code> donde se encuentra el proyecto front en el servidor remoto.</li>
+      </ol>
+    </li>
+  </ul>
+  
