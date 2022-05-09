@@ -36,7 +36,7 @@
     <li>
       Despliegue remoto:
       <ol>
-        <li>Abrir el navegador de preferencia y ingresar a la url <code>"https://proyecto1-etapa2-bi.herokuapp.com/"</code> donde se encuentra el proyecto back en el servidor remoto.</li>
+        <li>Abrir el navegador de preferencia y ingresar a la url <code>https://proyecto1-etapa2-bi.herokuapp.com/</code> donde se encuentra el proyecto back en el servidor remoto.</li>
       </ol>
     </li>
   </ul>
@@ -133,7 +133,7 @@
     <li>
       Despliegue remoto:
       <ol>
-        <li>Abrir el navegador de preferencia y ingresar a la url <code>"https://proyecto1-etapa2-bi-front.herokuapp.com/"</code> donde se encuentra el proyecto front en el servidor remoto.</li>
+        <li>Abrir el navegador de preferencia y ingresar a la url <code>https://proyecto1-etapa2-bi-front.herokuapp.com/</code> donde se encuentra el proyecto front en el servidor remoto.</li>
       </ol>
     </li>
   </ul>
